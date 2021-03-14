@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1615022644 source:d:\code c++\ltnc\baitapltnc_02\game\hangman.cpp
+	"HANGMAN/draw.h"
+
+1615023719 d:\code c++\ltnc\baitapltnc_02\game\hangman\draw.h
+	<thread>
+	<chrono>
+	<vector>
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<fstream>
+	<cstring>
+
+1615024197 source:d:\code c++\ltnc\baitapltnc_02\game\hangman\draw.cpp
+	"draw.h"
+
