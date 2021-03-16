@@ -22,21 +22,27 @@ void delete_char(char a[], char c){
         }
     }
 }
-/*
+
 void pad_right(char a[], int n){
     if(strlen(a)==n) return;
     else{
-        for(int i=0;i<n;i++) a[i]='.';
+        for(int i=strlen(a);i<n;i++) a[i]='.';
         a[n]='\0';
 
     }
-}*/
+}
 
-/*void pad_left(char a[], int n){
+void pad_left(char a[], int n){
     if(strlen(a)==n) return;
     else{
+    	int l=strlen(a);
+    	for(int i=0;i<=n-l;i++){
+    		for(int j=i+l-1;j>=i;j--){
+    			a[j]=a[j-1];
+			}a[0]='.';
+		}
     }
-}*/
+}
 
 void truncate(char a[], int n){
     if(strlen(a)<=n) return;
@@ -73,23 +79,23 @@ void trim_right(char a[]) {
 }
 
 int main(){
-    char a[]="aaabcaabcaaaabcaaaa";
+    char a[100000]="aaabcaabcaaaabcaaaa";
     cout << a << endl;
     reverse(a);
     cout <<a << endl;
     delete_char(a, 'a');
     cout << a << endl;
-    //pad_right(a,29);
-    //cout << a << endl;
-    //pad_left(a,29);
-    //cout << a << endl;
+    pad_right(a,29);
+    cout << a << endl;
+    pad_left(a,100);
+    cout << a << endl;
     truncate(a,3);
     cout << a << endl;
-    cout << is_palindrome(a) << endl;
-    char b[] ="     fsd fsd f";
+    cout << (is_palindrome(a) ? "True" : "False" )<< endl;
+    char b[100000] ="     fsd fsd f";
     trim_left(b);
     cout << b << endl;
-    char c[]="sdf fsd f    ";
+    char c[100000]="sdf fsd f    ";
     trim_right(c);
     cout << c << " " << strlen(c) << endl;
     return 0;
